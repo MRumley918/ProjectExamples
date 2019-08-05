@@ -1,0 +1,33 @@
+Start of run
+Crossing state:
+============
+mk_Crossing({<Cabbage>, <Farmer>, <Goat>, <Wolf>}, {}, <Left>)
+Farmer crosses right with goat
+Crossing state:
+============
+mk_Crossing({<Cabbage>, <Wolf>}, {<Farmer>, <Goat>}, <Right>)
+Farmer returns alone
+Crossing state:
+============
+mk_Crossing({<Cabbage>, <Farmer>, <Wolf>}, {<Goat>}, <Left>)
+Farmer crosses right with cabbage
+Crossing state:
+============
+mk_Crossing({<Wolf>}, {<Cabbage>, <Farmer>, <Goat>}, <Right>)
+Farmer returns with goat
+Crossing state:
+============
+mk_Crossing({<Farmer>, <Goat>, <Wolf>}, {<Cabbage>}, <Left>)
+Farmer crosses right with wolf
+Crossing state:
+============
+mk_Crossing({<Goat>}, {<Cabbage>, <Farmer>, <Wolf>}, <Right>)
+Farmer returns alone
+Crossing state:
+============
+mk_Crossing({<Farmer>, <Goat>}, {<Cabbage>, <Wolf>}, <Left>)
+Farmer crosses right with goat
+Crossing state:
+============
+mk_Crossing({}, {<Cabbage>, <Farmer>, <Goat>, <Wolf>}, <Right>)
+Problem Solved

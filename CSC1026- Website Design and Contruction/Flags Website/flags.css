@@ -1,0 +1,129 @@
+body{
+	background-color: #C7C1C1;
+	
+}
+/* sets the maximum and minimum widths for the window to be. Also centers the content by setting the margins to auto */
+#content{
+	min-width: 450px; 
+	max-width: 960px;
+	margin: auto;
+	
+	background-color: #FFFFFF;
+
+}
+/* adds the additional line breaks as bottom borders */
+#header,#imfflags,#letters{
+	border-bottom: 10px solid #5D2C2C;
+}
+#header {
+	padding-top:40px;
+	}
+/* this is the main typeface for the page */
+p,ul,dl{
+	font-family : "Palatino Linotype", serif;
+	
+}
+/* this is the typeface for the headings */	
+h1,h2,h3{
+	font-family : " Lucida Sans Unicode",sans-serif;
+	color: #8F8898; 
+	
+}
+/* background image for header */
+h1{
+	height: 100px;
+	background-image: url(https://internal.cs.ncl.ac.uk/modules/2015-16/csc1026/flags/css/70-flags.png) ;
+	background-position: right;
+	background-repeat: no-repeat;
+	
+}
+/* set the rounded rectangle border around the flickr image and position the item correctly in it */
+#flickr{
+	background-image: url(https://internal.cs.ncl.ac.uk/modules/2015-16/csc1026/flags/css/420x370-box.png) ;
+	background-repeat: no-repeat;
+	float: right;
+	width:450px;
+	height:400px;
+	
+}
+#flickr a{
+	position:relative;
+	top:20px;
+	left: 20px;
+}
+/* background image for national flags section */
+#natflags{
+	background-image: url(https://internal.cs.ncl.ac.uk/modules/2015-16/csc1026/flags/css/3-flags75.png) ;
+	background-position: right;
+	background-repeat: no-repeat;
+	padding-right: 400px;
+}
+/* horizontal rules are the correct thickness/colour */
+hr{
+	border: 5px solid  #5D2C2C;
+}
+/* bottom text is aligned right */
+#wiki{
+	text-align: right;
+	
+	
+}
+/* setting the dropdown menu- the content is not initially displayed, when the mouse hovers over the dropdown text the content is shown */
+#dropdown-content{
+	display:none;
+}
+#dropdown:hover+#dropdown-content{
+	display:block;
+}
+#dropdown-content:hover{
+	display:block;
+}
+/* formatting the position of the navbar, changing its colour, and also changing it form a list to being displayed inline*/
+#navbar{
+	background-color: #5D2C2C;
+	list-style-type: none;
+	text-align: right;
+	position: absolute;
+	top:5px;
+	width: 920px;	
+}
+#navbar a{
+	color:  #C7C1C1;
+}
+#navbar li {
+	display: inline;
+	padding: 10px;
+}
+/* set the rounded rectangle border around the video and position the item correctly in it */
+#video{
+	background-image:url(https://internal.cs.ncl.ac.uk/modules/2015-16/csc1026/flags/css/460x320-box.png) ;
+	background-repeat:no-repeat;
+	height:400px;
+	width:500px;
+	float:right;
+}
+#video object{
+	position:relative;
+	top:10px;
+	left: 20px;
+}
+#video p{
+	text-align:center;
+}
+/* displays the list of flags inline */
+#letterflags, #numberflags
+{
+	text-transform: uppercase;
+	font-weight: bold;
+	margin:auto;
+}
+#letterflags img{
+	border: 1px solid black;
+
+}
+#letterflags dt,#numberflags dt {
+	display:inline;
+}
+#letterflags br,#numberflags br{
+	display:none;
+}

@@ -1,0 +1,102 @@
+CSC2023: Algorithm Design and Analysis
+Assignment 1:
+Implementing and Comparing Search Algorithms
+Michael Rumley (150251891)
+Results:
+
+Test 1 (data1.txt/search1.txt)
+
+Sequential Search:
+18 not in array ( 6 comparisons made)
+69 not in array ( 19 comparisons made)
+201 not in array ( 47 comparisons made)
+331 not in array ( 66 comparisons made)
+492 not in array ( 98 comparisons made)
+Found 17 at position 4 after 5 comparisons
+Found 67 at position 16 after 17 comparisons
+Found 209 at position 48 after 49 comparisons
+Found 372 at position 72 after 73 comparisons
+Found 498 at position 98 after 99 comparisons
+Average number of comparisons 47
+
+Binary Search:
+18 not in array (7 comparisons made) 
+69 not in array (6 comparisons made) 
+201 not in array (7 comparisons made) 
+331 not in array (7 comparisons made) 
+492 not in array (7 comparisons made) 
+Found 17 at position 4 after 7 comparisons
+Found 67 at position 16 after 7 comparisons
+Found 209 at position 48 after 6 comparisons
+Found 372 at position 72 after 7 comparisons
+Found 498 at position 98 after 7 comparisons
+Average number of comparisons 6
+
+Hash Search:
+18 not in array ( 3 comparisons made)
+69 not in array ( 5 comparisons made)
+201 not in array ( 3 comparisons made)
+331 not in array ( 24 comparisons made)
+492 not in array ( 14 comparisons made)
+Found 17 at position 17 after 2 comparisons
+Found 67 at position 67 after 2 comparisons
+Found 209 at position 58 after 2 comparisons
+Found 372 at position 70 after 2 comparisons
+Found 498 at position 49 after 6 comparisons
+Average number of comparisons 6
+
+
+Test 2 (data2.txt/search2.txt)
+
+Sequential Search:
+20 not in array ( 9 comparisons made)
+832 not in array ( 307 comparisons made)
+1452 not in array ( 542 comparisons made)
+1937 not in array ( 729 comparisons made)
+2615 not in array ( 970 comparisons made)
+Found 87 at position 28 after 29 comparisons
+Found 851 at position 308 after 309 comparisons
+Found 1350 at position 496 after 497 comparisons
+Found 1990 at position 747 after 748 comparisons
+Found 2631 at position 973 after 974 comparisons
+Average number of comparisons 511
+
+Binary Search:
+20 not in array (10 comparisons made) 
+832 not in array (10 comparisons made) 
+1452 not in array (10 comparisons made) 
+1937 not in array (10 comparisons made) 
+2615 not in array (10 comparisons made) 
+Found 87 at position 28 after 9 comparisons
+Found 851 at position 308 after 10 comparisons
+Found 1350 at position 496 after 8 comparisons
+Found 1990 at position 747 after 10 comparisons
+Found 2631 at position 973 after 8 comparisons
+Average number of comparisons 9
+
+Hash Search:
+20 not in array ( 5 comparisons made)
+832 not in array ( 5 comparisons made)
+1452 not in array ( 2 comparisons made)
+1937 not in array ( 3 comparisons made)
+2615 not in array ( 3 comparisons made)
+Found 87 at position 87 after 2 comparisons
+Found 851 at position 851 after 2 comparisons
+Found 1350 at position 1350 after 2 comparisons
+Found 1990 at position 491 after 2 comparisons
+Found 2631 at position 1133 after 3 comparisons
+Average number of comparisons 2
+
+Other data that could be collected about the searches could include the actual time taken to complete them. However since this would be very short (fractions of a 
+second) prehaps a more useful thing to consider would be implementing a pointer in the array and counting how many places the pointer moved.
+
+
+Evaluation:
+
+1) Binary search is the most consistant search method overall, with every binary search completing within 6-10 comparisons
+2) Hash searching is only an effective method with a large number of values- smaller arrays lead to less empty hash arrays and therefore more comparisons.
+3) In test 1, Binary and Hash searching are tied for the least amount of comparisons on average, both scoring 6. Binary is the most consistant, all searches have 6 or
+   7 comparisons
+4) In test 2, Hash searching is the most effective, with an average of 2 comparisons. 
+5) In both tests, sequential search is by far the worst performing search algorithm, with approximately half as many average comparisons as array elements.
+6) The most comparisons any search makes is 99 in test 1 and 974 in test 2.
