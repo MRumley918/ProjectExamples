@@ -1,0 +1,196 @@
+Number of Nodes 10
+Balanced Binary Tree:
+
+Neighbours of node 0: [1, 2]
+Neighbours of node 1: [0, 3, 4]
+Neighbours of node 2: [0, 5, 6]
+Neighbours of node 3: [1, 7, 8]
+Neighbours of node 4: [1, 9]
+Neighbours of node 5: [2]
+Neighbours of node 6: [2]
+Neighbours of node 7: [3]
+Neighbours of node 8: [3]
+Neighbours of node 9: [4]
+
+Election Algorithm:
+
+Node 4 wakes up, sends message to all neighbours
+Node 4 sends wake up message to 1
+Node 4 sends wake up message to 9
+8 processes
+[4, 7, 8, 9, 1, 2, 0, 3]
+Node 9 wakes up, sends message to all neighbours
+Node 9 sends wake up message to 4
+Node 9 recieves messages from all neighbours and starts wave algorithm
+Node 9 sends message to 4
+Node 9 waiting for message from silent neighbour
+Node 1 wakes up, sends message to all neighbours
+Node 1 sends wake up message to 0
+Node 1 sends wake up message to 3
+Node 1 sends wake up message to 4
+Node 0 wakes up, sends message to all neighbours
+Node 0 sends wake up message to 1
+Node 0 sends wake up message to 2
+Node 3 wakes up, sends message to all neighbours
+Node 3 sends wake up message to 1
+Node 3 sends wake up message to 7
+Node 3 sends wake up message to 8
+4 processes
+[5, 3, 0, 6]
+7 processes
+[5, 9, 2, 6, 4, 0, 3]
+Node 9 waiting for message from silent neighbour
+Node 2 wakes up, sends message to all neighbours
+Node 2 sends wake up message to 0
+Node 2 sends wake up message to 5
+Node 2 sends wake up message to 6
+Node 6 wakes up, sends message to all neighbours
+Node 6 sends wake up message to 2
+Node 6 recieves messages from all neighbours and starts wave algorithm
+Node 6 sends message to 2
+Node 6 waiting for message from silent neighbour
+Node 4 recieves messages from all neighbours and starts wave algorithm
+Node 4 recieves message from 9
+Node 4 sends message to 1
+Node 4 waiting for message from silent neighbour
+Node 0 recieves messages from all neighbours and starts wave algorithm
+3 processes
+[8, 4, 6]
+Node 8 wakes up, sends message to all neighbours
+Node 8 sends wake up message to 3
+Node 8 recieves messages from all neighbours and starts wave algorithm
+Node 8 sends message to 3
+Node 8 waiting for message from silent neighbour
+Node 4 waiting for message from silent neighbour
+Node 6 waiting for message from silent neighbour
+0 processes
+[]
+3 processes
+[9, 4, 7]
+Node 9 waiting for message from silent neighbour
+Node 4 waiting for message from silent neighbour
+Node 7 wakes up, sends message to all neighbours
+Node 7 sends wake up message to 3
+Node 7 recieves messages from all neighbours and starts wave algorithm
+Node 7 sends message to 3
+Node 7 waiting for message from silent neighbour
+5 processes
+[6, 0, 9, 2, 1]
+Node 6 waiting for message from silent neighbour
+Node 9 waiting for message from silent neighbour
+Node 1 recieves messages from all neighbours and starts wave algorithm
+Node 1 recieves message from 4
+9 processes
+[3, 7, 1, 0, 9, 4, 8, 6, 5]
+Node 3 recieves messages from all neighbours and starts wave algorithm
+Node 3 recieves message from 8
+Node 3 recieves message from 7
+Node 3 sends message to 1
+Node 3 waiting for message from silent neighbour
+Node 7 waiting for message from silent neighbour
+Node 1 recieves message from 3
+Node 1 sends message to 0
+Node 1 waiting for message from silent neighbour
+Node 0 recieves message from 1
+Node 0 sends message to 2
+Node 0 waiting for message from silent neighbour
+Node 9 waiting for message from silent neighbour
+Node 4 waiting for message from silent neighbour
+Node 8 waiting for message from silent neighbour
+Node 6 waiting for message from silent neighbour
+Node 5 wakes up, sends message to all neighbours
+Node 5 sends wake up message to 2
+Node 5 recieves messages from all neighbours and starts wave algorithm
+Node 5 sends message to 2
+Node 5 waiting for message from silent neighbour
+5 processes
+[9, 2, 7, 8, 0]
+Node 9 waiting for message from silent neighbour
+Node 2 recieves messages from all neighbours and starts wave algorithm
+Node 2 recieves message from 6
+Node 2 recieves message from 0
+Node 2 sends message to 5
+Node 2 recieves message from 5
+Node 2 not elected
+Node 2 sends message to 0
+Node 2 sends message to 6
+Node 2 decides in 9th iteration
+Node 7 waiting for message from silent neighbour
+Node 8 waiting for message from silent neighbour
+Node 0 recieves message from 2
+Node 0 elected
+Node 0 sends message to 1
+Node 0 decides in 9th iteration
+3 processes
+[2, 5, 8]
+Node 2 has finished algorithm
+Node 5 recieves message from 2
+Node 5 not elected
+Node 5 decides in 10th iteration
+Node 8 waiting for message from silent neighbour
+10 processes
+[8, 4, 1, 0, 6, 9, 7, 5, 3, 2]
+Node 8 waiting for message from silent neighbour
+Node 4 waiting for message from silent neighbour
+Node 1 recieves message from 0
+Node 1 not elected
+Node 1 sends message to 3
+Node 1 sends message to 4
+Node 1 decides in 11th iteration
+Node 0 has finished algorithm
+Node 6 recieves message from 2
+Node 6 not elected
+Node 6 decides in 11th iteration
+Node 9 waiting for message from silent neighbour
+Node 7 waiting for message from silent neighbour
+Node 5 has finished algorithm
+Node 3 recieves message from 1
+Node 3 not elected
+Node 3 sends message to 7
+Node 3 sends message to 8
+Node 3 decides in 11th iteration
+Node 2 has finished algorithm
+5 processes
+[6, 8, 4, 1, 3]
+Node 6 has finished algorithm
+Node 8 recieves message from 3
+Node 8 not elected
+Node 8 decides in 12th iteration
+Node 4 recieves message from 1
+Node 4 not elected
+Node 4 sends message to 9
+Node 4 decides in 12th iteration
+Node 1 has finished algorithm
+Node 3 has finished algorithm
+7 processes
+[3, 8, 2, 4, 5, 7, 0]
+Node 3 has finished algorithm
+Node 8 has finished algorithm
+Node 2 has finished algorithm
+Node 4 has finished algorithm
+Node 5 has finished algorithm
+Node 7 recieves message from 3
+Node 7 not elected
+Node 7 decides in 13th iteration
+Node 0 has finished algorithm
+5 processes
+[0, 3, 2, 5, 8]
+Node 0 has finished algorithm
+Node 3 has finished algorithm
+Node 2 has finished algorithm
+Node 5 has finished algorithm
+Node 8 has finished algorithm
+6 processes
+[3, 0, 6, 4, 8, 9]
+Node 3 has finished algorithm
+Node 0 has finished algorithm
+Node 6 has finished algorithm
+Node 4 has finished algorithm
+Node 8 has finished algorithm
+Node 9 recieves message from 4
+Node 9 not elected
+Node 9 decides in 15th iteration
+Algorithm terminates after 15 iterations 
+Number of processes which decide in election algorithm: 10
+Leader(Minimal ID) [0]
+

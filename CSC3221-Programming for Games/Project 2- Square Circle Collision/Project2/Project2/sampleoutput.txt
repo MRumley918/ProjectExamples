@@ -1,0 +1,144 @@
+Square at 14 , 7 edge 2
+Square at 4 , 9 edge 1
+Square at 2 , 18 edge 3
+Square at 5 , 5 edge 1
+Square at 1 , 7 edge 2
+Square at 2 , 15 edge 4
+Square at 11 , 16 edge 4
+Square at 13 , 2 edge 1
+Square at 1 , 2 edge 1
+Circle at 15 , 18 radius 1
+Circle at 11 , 6 radius 4
+Circle at 12 , 9 radius 3
+Circle at 15 , 19 radius 4
+Circle at 11 , 3 radius 3
+Circle at 13 , 13 radius 3
+Circle at 11 , 1 radius 1
+Circle at 7 , 8 radius 2
+Playing with 17 shapes
+Round: 1
+Square at 17 , 8 edge 2
+has collided with
+Circle at 14 , 8 radius 4
+Square at 14 , 5 edge 1
+has collided with
+Circle at 13 , 5 radius 3
+Round: 2
+Square at 10 , 1 edge 3
+has collided with
+Square at 7 , 0 edge 4
+Round: 3
+Circle at 2 , 3 radius 1
+has collided with
+Circle at 0 , 0 radius 3
+Round: 4
+Round: 5
+Square at 0 , 8 edge 4
+has collided with
+Circle at 3 , 4 radius 3
+Round: 6
+Round: 7
+Square at 3 , 4 edge 1
+has collided with
+Circle at 3 , 5 radius 2
+Round: 8
+Square at 3 , 0 edge 1
+has collided with
+Circle at 6 , 0 radius 4
+Round: 9
+Round: 10
+Round: 11
+Round: 12
+Round: 13
+Round: 14
+Round: 15
+Round: 16
+Round: 17
+Round: 18
+Round: 19
+Round: 20
+Round: 21
+Round: 22
+Round: 23
+Round: 24
+Round: 25
+Round: 26
+Round: 27
+Round: 28
+Round: 29
+Round: 30
+Round: 31
+Round: 32
+Round: 33
+Round: 34
+Round: 35
+Round: 36
+Round: 37
+Round: 38
+Round: 39
+Round: 40
+Round: 41
+Round: 42
+Round: 43
+Round: 44
+Round: 45
+Round: 46
+Round: 47
+Round: 48
+Round: 49
+Round: 50
+Round: 51
+Round: 52
+Round: 53
+Round: 54
+Round: 55
+Round: 56
+Round: 57
+Round: 58
+Round: 59
+Round: 60
+Round: 61
+Round: 62
+Round: 63
+Round: 64
+Round: 65
+Round: 66
+Round: 67
+Round: 68
+Round: 69
+Round: 70
+Round: 71
+Round: 72
+Round: 73
+Round: 74
+Round: 75
+Round: 76
+Round: 77
+Round: 78
+Round: 79
+Round: 80
+Round: 81
+Round: 82
+Round: 83
+Round: 84
+Round: 85
+Round: 86
+Round: 87
+Round: 88
+Round: 89
+Round: 90
+Round: 91
+Round: 92
+Round: 93
+Round: 94
+Round: 95
+Round: 96
+Round: 97
+Round: 98
+Square at 11 , 0 edge 2
+has collided with
+Square at 11 , 0 edge 1
+
+
+Circle at 7 , 8 radius 1
+ is the winner! After 99 rounds

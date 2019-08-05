@@ -1,0 +1,138 @@
+#define N 2
+
+byte init_data[8];
+/* Has the receiver been sent to? */
+bit receiver=0;
+/* Process: Params- id-Process ID */
+/*					in- Input Channel*/
+/*					out-Output Channel*/
+/*					torec-channel to receiver */
+proctype proc(byte id;chan in, out,torec){
+	/* Data that process holds */
+	byte my_data[N];
+	/*Initialise my_data with initial data*/
+	byte i=0;
+	do
+		::(i<N)->my_data[i] = init_data[id*N+i]->i++;
+		::(i==N)->break;
+	od
+	assert( i==N );
+	/* received data from previous process */
+	byte received_data[N];
+	byte j=0;
+	do 
+		::(j<N)->
+			/* Receives data from input */
+			in?received_data[j];
+			/* If the received byte is greater than this processes byte then it is replaced and sent to the output channel */
+			if
+				::(received_data[j]>=my_data[j])->my_data[j]=received_data[j]->out!my_data[j];j++;
+				/* Otherwise it is disreguarded and the processes data is sent to the next process */
+				::else->out!my_data[j];j++;
+			fi
+		::(j==N)->break;
+	od
+	assert ( j==N );
+	end1:
+	if
+		/* if the receiver hasnt sent already and this is the last process */
+		::(receiver==0&&id==3)->receiver=1;
+			byte x=0;
+			do
+				/* sends the data to the receiver */
+				::(x<N)->torec!my_data[x];x++;
+				::(x==N)->break;
+				
+			od
+	fi
+	assert(x==N);
+}
+/*Receiver: Params- fromproc- process which gives data to receiver */
+proctype rec(chan fromproc){
+	/* result array */
+	byte result[N];
+	byte y=0;
+	/* reads from process */
+	do
+		::(y<N)->fromproc?result[y];y++;
+		::(y==N)->break;
+	od
+	assert (y==N);
+}
+/* Duplicate: Params- in-Input channel */
+/* 					  out- Output channel */
+proctype dup(chan in,out){
+	byte data;
+	/* Reads in a message from the input, then sends 2 of that message to the output */
+	end2:
+	do
+		::in?data ->out!data->out!data;
+	od
+}
+/* Handler: Params- in-Input channel */
+/*					out-Output channel*/
+proctype handler(chan in,out){
+	/* Duplicated data will be twice as long as the data from prA */
+	byte dupdata[N*2];
+	/*Reads data into the array from the input channel */
+	byte n =0;
+	do
+		::(n<N*2)->in?dupdata[n]->n++;
+		::(n==N*2)->break;
+	od
+	/* Only send one of each message to the output channel */
+	byte m=0;
+	do
+		::(m<((N*2)-1))->out!dupdata[m]->m=m+2;
+		::else->break;
+	od
+
+}
+
+
+init{
+	/* Initialise channels */
+	chan AtoB = [N] of { byte };
+	chan AtoDup = [N] of { byte };
+	chan DuptoHandler = [N] of { byte};
+	chan HandlertoB = [N] of {byte};
+	chan BtoC = [N] of { byte };
+	chan CtoD = [N] of { byte };
+	chan DtoA = [N] of { byte };
+	chan procToRec = [N] of { byte };
+atomic{
+	/* Set random numbers as initial data */
+	init_data[0]=2;
+	init_data[1]=9;
+	init_data[2]=7;
+	init_data[3]=13;
+	init_data[4]=1;
+	init_data[5]=6;
+	init_data[6]=12;
+	init_data[7]=8;
+	/* Send inital message of 0 to process A to start program */
+	byte z=0;
+	do
+		::(z<N)->DtoA!0->z++;
+		::(z==N)->break;
+	od
+	/* run processes */
+	/* prA */
+	run proc(0,DtoA,AtoDup,procToRec);
+	/* Duplication of messages */
+	run dup(AtoDup,DuptoHandler);
+	/* Handle Duplication */
+	run handler(DuptoHandler,HandlertoB);
+	/* prB */
+	run proc(1,HandlertoB,BtoC,procToRec);
+	/* prC */
+	run proc(2,BtoC,CtoD,procToRec);
+	/* prD */
+	run proc(3,CtoD,DtoA,procToRec);
+	/* rec */
+	run rec(procToRec);
+	
+}
+	
+	
+}

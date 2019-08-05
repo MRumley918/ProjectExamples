@@ -1,0 +1,71 @@
+Number of Nodes 10
+Unbalanced Binary Tree:
+
+Neighbours of node 0: [1, 2]
+Neighbours of node 1: [0, 3, 4]
+Neighbours of node 2: [0]
+Neighbours of node 3: [1, 5, 6]
+Neighbours of node 4: [1]
+Neighbours of node 5: [3, 7, 8]
+Neighbours of node 6: [3]
+Neighbours of node 7: [5, 9]
+Neighbours of node 8: [5]
+Neighbours of node 9: [7]
+
+Wave algorithm:
+
+10 processes
+[2, 5, 8, 4, 3, 0, 9, 1, 7, 6]
+Node 2 sends message to 0
+Node 2 waiting for message from silent neighbour
+Node 8 sends message to 5
+Node 8 waiting for message from silent neighbour
+Node 4 sends message to 1
+Node 4 waiting for message from silent neighbour
+Node 0 recieves message from 2
+Node 0 sends message to 1
+Node 0 waiting for message from silent neighbour
+Node 9 sends message to 7
+Node 9 waiting for message from silent neighbour
+Node 1 recieves message from 4
+Node 1 recieves message from 0
+Node 1 sends message to 3
+Node 1 waiting for message from silent neighbour
+Node 7 recieves message from 9
+Node 7 sends message to 5
+Node 7 waiting for message from silent neighbour
+Node 6 sends message to 3
+Node 6 waiting for message from silent neighbour
+10 processes
+[3, 9, 6, 5, 4, 7, 2, 8, 1, 0]
+Node 3 recieves message from 1
+Node 3 recieves message from 6
+Node 3 sends message to 5
+Node 3 waiting for message from silent neighbour
+Node 9 waiting for message from silent neighbour
+Node 6 waiting for message from silent neighbour
+Node 5 recieves message from 8
+Node 5 recieves message from 7
+Node 5 sends message to 3
+Node 5 recieves message from 3
+Node 5 decides in 2th iteration
+Node 4 waiting for message from silent neighbour
+Node 7 waiting for message from silent neighbour
+Node 2 waiting for message from silent neighbour
+Node 8 waiting for message from silent neighbour
+Node 1 waiting for message from silent neighbour
+Node 0 waiting for message from silent neighbour
+9 processes
+[2, 4, 1, 0, 7, 8, 3, 9, 6]
+Node 2 waiting for message from silent neighbour
+Node 4 waiting for message from silent neighbour
+Node 1 waiting for message from silent neighbour
+Node 0 waiting for message from silent neighbour
+Node 7 waiting for message from silent neighbour
+Node 8 waiting for message from silent neighbour
+Node 3 recieves message from 5
+Node 3 decides in 3th iteration
+Node 9 waiting for message from silent neighbour
+Node 6 waiting for message from silent neighbour
+Algorithm terminates after 3 iterations
+Number of processes which decide in wave algorithm: 2

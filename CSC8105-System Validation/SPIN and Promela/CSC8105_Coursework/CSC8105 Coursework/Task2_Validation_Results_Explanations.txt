@@ -1,0 +1,52 @@
+SPIN Validation results (N=2)
+
+verification result:
+spin -a  Coursework_Project_Task2.txt
+gcc -DMEMLIM=1024 -O2 -DXUSAFE -DSAFETY -DNOCLAIM -w -o pan pan.c
+./pan -m10000 
+Pid: 7384
+
+(Spin Version 6.4.4 -- 1 November 2015)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	- (not selected)
+	assertion violations	+
+	cycle checks       	- (disabled by -DSAFETY)
+	invalid end states	+
+
+State-vector 192 byte, depth reached 130, errors: 0
+     8147 states, stored
+     2570 states, matched
+    10717 transitions (= stored+matched)
+       12 atomic steps
+hash conflicts:         1 (resolved)
+
+Stats on memory usage (in Megabytes):
+    1.709	equivalent memory usage for states (stored*(State-vector + overhead))
+    1.455	actual memory usage for states (compression: 85.12%)
+         	state-vector as stored = 159 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  129.901	total actual memory usage
+
+
+unreached in proctype proc
+	(0 of 43 states)
+unreached in proctype rec
+	(0 of 10 states)
+unreached in proctype dup
+	Coursework_Project_Task2.txt:71, state 7, "-end-"
+	(1 of 7 states)
+unreached in proctype handler
+	(0 of 18 states)
+unreached in init
+	(0 of 26 states)
+
+pan: elapsed time 0.006 seconds
+No errors found -- did you verify all claims?
+
+
+The duplication process takes the place of chan AtoB in Task 1, by sending the output data from process A first to a process
+'dup' that sends 2 messages out for every one it receieves. This is then sent to a handler process that sorts the messages
+receieved and only sends the correct ones back to process B. The rest of the program then proceeds in the same fashion as Task 1.

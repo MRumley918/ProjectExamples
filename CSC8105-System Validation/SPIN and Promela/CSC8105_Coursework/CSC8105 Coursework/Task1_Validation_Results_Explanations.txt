@@ -1,0 +1,51 @@
+SPIN Validation Results (N=3)
+
+spin -a  Coursework_Project_Task1.txt
+gcc -DMEMLIM=1024 -O2 -DXUSAFE -DSAFETY -DNOCLAIM -w -o pan pan.c
+./pan -m10000 
+Pid: 10068
+
+(Spin Version 6.4.4 -- 1 November 2015)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	- (not selected)
+	assertion violations	+
+	cycle checks       	- (disabled by -DSAFETY)
+	invalid end states	+
+
+State-vector 152 byte, depth reached 142, errors: 0
+     8262 states, stored
+     2362 states, matched
+    10624 transitions (= stored+matched)
+       12 atomic steps
+hash conflicts:         1 (resolved)
+
+Stats on memory usage (in Megabytes):
+    1.418	equivalent memory usage for states (stored*(State-vector + overhead))
+    1.360	actual memory usage for states (compression: 95.87%)
+         	state-vector as stored = 145 byte + 28 byte overhead
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  129.804	total actual memory usage
+
+
+unreached in proctype proc
+	(0 of 43 states)
+unreached in proctype rec
+	(0 of 10 states)
+unreached in init
+	(0 of 28 states)
+
+pan: elapsed time 0.007 seconds
+No errors found -- did you verify all claims?
+
+
+
+The solution works by each process keeping a record of the 2 arrays of data it knows- its own(init_data) and that which
+is received from the previous process in the sequence(receieved_data). Before any data is sent to the next process a check
+is made to find which value is higher- this is done N times- for each number in the array, and then the number is sent to 
+the next process to be stored in that processes received data, and so on. When the solution is initialised, an zeroed 
+array of size N is sent to process A in order to start off the sequence. When the final process has received input, it
+is again checked against its own data before being sent to the receiever. As per the specification, the receiver simply stores
+the result in an array and performs no calculation.

@@ -1,0 +1,1 @@
+Since keyA and keyB should be the same, parties a and b now have a shared secret that can be used in symmetric key algorithms in order to encrypt plaintext and decrypt cyphertext
